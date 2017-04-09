@@ -1,0 +1,43 @@
+<?php
+return [
+    'pages' => 'Paginas',
+    'my-pages' => 'Mis Paginas',
+    'create-page' => 'Crear Pagina',
+    'change-photo-fail' => 'Error guardando foto',
+    'filter-category' => 'Filtrar por categoria',
+    'create-a-page' => 'Crear una Pagina',
+    'no-page' => 'No hay paginas en este momento',
+    'name' => 'Nombre de la Pagina',
+    'website' => 'web',
+    'short-description' => 'Descripcion corta',
+    'type-of-page' => 'Tipo de Pagina',
+    'you-may-like' => 'Te puede gustar',
+    'change-cover' => 'Cambiar portada',
+    'delete-page' => 'Borrar Pagina',
+    'report-page' => 'Reportar Pagina',
+    'edit-page' => 'Editar Pagina',
+    'change-icon' => 'Cambiar Icono',
+    'design-page' => 'Personalizar Pagina',
+    'page-add-error' => "Error creando pagina : Puede que ya exista o detalles invalidos",
+    "success" => "Guardado exitosamente",
+    'save-error' => "Error guardando cambios",
+
+    //Version 2.0
+    'url' => 'Page Url',
+    'moderator-roles' => 'Este usuario puede responder y borrar comentarios en la pagina',
+    'editor-roles' => 'Este usuario puede editar la pagina, responder a nombre de la pagina y moderar publicaciones y comentarios',
+    'admin-roles' => 'Este usuario puede administrar todos los aspecto de la pagina incluyendo la edicion de la informacion, publicar a nombre de la pagina y moderar las publicaciones y comentarios',
+    'make-you-admin' => 'te agrego como administrador de ',
+    'make-you-editor' => 'te agrego como editor de ',
+    'make-you-moderator' => 'te agrego como moderador de ',
+    'page-roles' => 'Administrar roles de pagina',
+    'admin' => 'Admin',
+    'editor' => 'Editor',
+    'moderator' => 'Moderador',
+    'add-new-admin' => 'Agregar Nuevo Admin',
+    'add-admin-input' => 'Escribe el nombre de tus amigos o personas que les gusta esta pagina',
+    'save-admin' => 'Guardar Admin',
+    'role' => 'Rol',
+    'invite-friends-placeholder' => 'Invita a tus amigos a que le den me gusta'
+
+];
