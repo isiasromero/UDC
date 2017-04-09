@@ -1,0 +1,90 @@
+
+<div class="box">
+
+    <div class="box-title">
+
+        About <?php echo $game->title; ?>
+
+        <?php if(\Auth::check() and ($game->isOwner() or \Auth::user()->isAdmin())): ?>
+            <span class="pull-right">
+                <a href="<?php echo $game->present()->url('edit'); ?>"><?php echo trans('global.edit'); ?></a> | <a href=""><?php echo trans('global.delete'); ?></a>
+            </span>
+        <?php endif; ?>
+
+
+    </div>
+    <div class="box-content">
+        <?php $hasLike = $game->hasLiked()?>
+
+        <a  data-is-login="<?php echo Auth::check(); ?>" data-status="<?php echo ($hasLike) ? '1' : 0; ?>" class="btn btn-default btn-xs like-button" data-like="<?php echo trans('like.like'); ?>" data-unlike="<?php echo trans('like.unlike'); ?>" data-id="<?php echo $game->id; ?>" data-type="game" href=""><i class="icon ion-ios7-heart"></i> <span><?php echo ($hasLike) ? trans('like.unlike') : trans('like.like'); ?></span></a>
+
+        <div class="page-like">
+            <i class="icon ion-thumbsup"></i> <span class="post-like-count-<?php echo $game->id; ?>"><?php echo $game->countLikes(); ?></span> <?php echo trans('like.likes'); ?>
+        </div>
+
+        <table class="table table-striped">
+
+            <tbody>
+
+            <tr>
+                <td><strong><?php echo trans('user.date-created'); ?> :</strong></td>
+                <td><span class="post-time" ><span title="<?php echo $game->present()->joinedOn(); ?>"><?php echo $game->created_at; ?></span></span> </td>
+            </tr>
+
+
+            <tr>
+                <td><strong><?php echo trans('global.about'); ?></strong></td>
+                <td><?php echo $game->description; ?></td>
+            </tr>
+
+
+
+            <?php foreach($game->present()->fields() as $field): ?>
+            <tr>
+                <td><strong><?php echo $field->name; ?></strong></td>
+                <td><?php echo $game->present()->field($field->id); ?></td>
+            </tr>
+            <?php endforeach; ?>
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+
+<?php if(Auth::check()): ?>
+<?php $friendsLikes = $game->friendsLiked()?>
+<?php if(count($friendsLikes) > 0): ?>
+<div class="box">
+    <div class="box-title"><?php echo trans('user.friend-like-this'); ?></div>
+    <div class="box-content">
+        <div class="user-tile-list">
+
+            <?php foreach($friendsLikes as $like): ?>
+
+            <a data-ajaxify="true" href="<?php echo $like->user->present()->url(); ?>"><img src="<?php echo $like->user->present()->getAvatar(100); ?>"/> </a>
+
+            <?php endforeach; ?>
+
+        </div>
+    </div>
+</div>
+<?php endif; ?>
+
+<?php endif; ?>
+
+<?php if($game->countLikes() > 0): ?>
+<div class="box">
+    <div class="box-title"><?php echo trans('user.people-like-this'); ?></div>
+    <div class="box-content">
+        <div class="user-tile-list">
+            <?php foreach($game->likes->take(12) as $like): ?>
+
+            <a data-ajaxify="true" href="<?php echo $like->user->present()->url(); ?>"><img src="<?php echo $like->user->present()->getAvatar(100); ?>"/> </a>
+
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+<?php endif; ?>

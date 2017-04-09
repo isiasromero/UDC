@@ -1,0 +1,19 @@
+<?php if($details['type'] == 'text' or $details['type'] == 'int'): ?>
+
+    <input class="form-control" type="text" name="val[<?php echo $slug; ?>]" value="<?php echo $configurationRepository->get($slug, $details['value']); ?>"/>
+
+<?php elseif($details['type'] == 'boolean'): ?>
+    <select class="form-control" name="val[<?php echo $slug; ?>]">
+        <option <?php echo ($configurationRepository->get($slug, $details['value']) == 1) ? 'selected' :null; ?> value="1">Yes</option>
+        <option <?php echo ($configurationRepository->get($slug, $details['value']) == 0) ? 'selected' :null; ?> value="0">No</option>
+    </select>
+<?php elseif($details['type'] == 'dropdown'): ?>
+    <select class="form-control" name="val[<?php echo $slug; ?>]">
+
+        <?php foreach($configurationRepository->data($details['data']) as $value => $name): ?>
+            <option <?php echo ($configurationRepository->get($slug, $details['value']) == $value) ? 'selected' : null; ?> value="<?php echo $value; ?>"><?php echo $name; ?></option>
+        <?php endforeach; ?>
+    </select>
+<?php else: ?>
+    <textarea class="form-control" name="val[<?php echo $slug; ?>]"><?php echo $configurationRepository->get($slug, $details['value']); ?></textarea>
+<?php endif; ?>
