@@ -1,0 +1,16 @@
+<?php if(!count($communities)): ?>
+    <div class="box">
+        <div class="box-title"><?php echo trans('community.my-communities'); ?></div>
+        <div class="box-content">
+            <div class="alert alert-info"><?php echo trans('community.no-community'); ?>  <a href="<?php echo URL::route('community-create'); ?>" class="alert-link"><?php echo trans('community.create'); ?></a> </div>
+        </div>
+    </div>
+<?php endif; ?>
+
+<div class="communities-container">
+    <?php foreach($communities as $community): ?>
+        <?php echo Theme::section('community.display', ['community' => $community]); ?>
+    <?php endforeach; ?>
+</div>
+
+<?php echo $communities->links(); ?>

@@ -1,0 +1,16 @@
+<?php if(!count($communities)): ?>
+    <div class="box">
+        <div class="box-title">Communities results</div>
+        <div class="box-content">
+            <div class="alert alert-info">No Community is found  ...try again later</div>
+        </div>
+    </div>
+<?php endif; ?>
+
+<div class="communities-container">
+    <?php foreach($communities as $community): ?>
+        <?php echo Theme::section('community.display', ['community' => $community]); ?>
+    <?php endforeach; ?>
+</div>
+
+<?php echo $communities->links(); ?>

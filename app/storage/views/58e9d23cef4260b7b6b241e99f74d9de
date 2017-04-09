@@ -1,0 +1,24 @@
+
+    <div class="box-title"><?php echo ucwords($type); ?></div>
+    <div class="box-content">
+
+        <form class="form-horizontal" action="<?php echo URL::route('admincp-save-configuration'); ?>" method="post">
+
+
+                        <?php foreach($configurations as $slug => $details): ?>
+
+                            <div class="form-group">
+                                <label class="col-sm-4"><?php echo $details['title']; ?></label>
+                                <div class="col-sm-7">
+                                    <?php echo Theme::section('configuration.format', compact(['slug', 'details', 'configurationRepository'])); ?>
+                                    <p class="help-block"><?php echo $details['description']; ?></p>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+
+            <div class="body-header">
+                <input class="btn btn-danger no-radius" type="submit" value="Save"/>
+            </div>
+
+        </form>
+    </div>

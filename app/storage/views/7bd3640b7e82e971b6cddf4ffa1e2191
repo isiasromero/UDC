@@ -1,0 +1,30 @@
+<?php echo Theme::extend('community-timeline-before-editor'); ?>
+
+<?php if($community->present()->canPost()): ?>
+    <?php echo Theme::section('post.editor.main', [
+        'offPrivacy' => true,
+        'type' => 'community',
+        'community_id' => $community->id,
+        'privacy' => (($community->privacy == 1) ? 1 : 6)
+    ]); ?>
+<?php endif; ?>
+
+<?php echo Theme::extend('community-timeline-after-editor'); ?>
+<div data-type="community-<?php echo $community->id; ?>" data-lastcheck="" data-offset="<?php echo \Config::get('post-per-page'); ?>"  id="post-list">
+
+    <?php foreach($posts as $post): ?>
+        <?php if(Cache::has('post-'.$post->id)): ?>
+        <?php echo Cache::get('post-'.$post->id); ?>
+        <?php else: ?>
+        <?php
+        $postContent = (String) Theme::section('post.media', ['post' => $post]);
+        if (Config::get('enable-query-cache', 0)) Cache::add('post-'.$post->id, $postContent, Config::get('post-cache-time-out', 3));
+        ?>
+        <?php echo $postContent; ?>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</div>
+
+
+
+

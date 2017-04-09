@@ -1,0 +1,5 @@
+<div class="box community-history">
+    <i class="icon ion-ios7-people"></i>
+    <h3><?php echo trans('community.welcome-to', ['title' => $community->title]); ?></h3>
+    <p><?php echo trans('community.created-on'); ?> : <?php echo $community->created_at; ?></p>
+</div>

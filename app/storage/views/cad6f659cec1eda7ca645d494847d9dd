@@ -1,0 +1,40 @@
+<div class="container page-content">
+
+
+
+    <div class="left-column">
+        <div class="content-topography page-topography">
+            <h2 class="title"><?php echo trans('page.pages'); ?></h2>
+
+
+            <ul class="nav menu">
+                <li ><a data-ajaxify="true" href="<?php echo URL::route('pages-create'); ?>"><?php echo trans('page.create-a-page'); ?></a> </li>
+                <li ><a data-ajaxify="true" href="<?php echo URL::route('my-pages'); ?>"><?php echo trans('page.my-pages'); ?></a> </li>
+
+            </ul>
+
+        </div>
+        <?php echo $content; ?>
+    </div>
+    <div class="right-column">
+
+        <ul class="nav user-action-buttons">
+            <li><a href="<?php echo URL::route('pages-create'); ?>" data-ajaxify="true"><i class="icon ion-ios7-personadd-outline"></i> <span><?php echo trans('page.create-a-page'); ?></span></a> </li>
+            <li><a href="<?php echo URL::route('my-pages'); ?>" data-ajaxify="true"><i class="icon ion-disc"></i> <span><?php echo trans('page.my-pages'); ?></span></a> </li>
+
+            <!--<li><a href="<?php echo URL::route('discover-communities'); ?>" data-ajaxify="true"><i class="icon ion-disc"></i> <span>Discover Communities</span></a> </li>-->
+        </ul>
+
+        <div class="box nav-box">
+            <div class="box-title"><?php echo trans('page.filter-category'); ?></div>
+            <ul class="nav">
+                <?php foreach(app('App\\Repositories\\PageCategoryRepository')->listAll() as $category): ?>
+                    <li><a href="<?php echo URL::route('pages'); ?>?category=<?php echo $category->id; ?>"><?php echo $category->title; ?></a> </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+
+
+        <?php echo Theme::widget()->get('user-pages'); ?>
+    </div>
+</div>

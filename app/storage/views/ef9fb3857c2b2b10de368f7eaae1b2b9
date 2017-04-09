@@ -1,0 +1,25 @@
+<a
+    data-userid = "<?php echo $message->senderUser->id; ?>"
+    data-link = "<?php echo $message->senderUser->present()->url(); ?>"
+    data-name = "<?php echo str_limit($message->senderUser->present()->fullName(), 100); ?>"
+    class="message-dropdown-link"
+    href="<?php echo URL::route('messages'); ?>?user=<?php echo $message->senderUser->username; ?>">
+    <div class="media">
+        <div class="media-object pull-left">
+            <img src="<?php echo $message->senderUser->present()->getAvatar(100); ?>"/>
+        </div>
+        <div class="media-body">
+            <h3>
+                <?php echo $message->senderUser->present()->fullName(); ?>
+                <?php $count = app('App\\Repositories\\MessageRepository')->countUnreadFrom($message->sender)?>
+                <?php if($count): ?>
+                    <strong style="font-size: 12px">(<?php echo $count; ?>)</strong>
+                <?php endif; ?>
+            </h3>
+            <?php $lastMessage = app('App\\Repositories\\MessageRepository')->lastMessage($message->sender)?>
+            <p><?php echo \Hook::fire('post-text', str_limit($lastMessage->text, 30)); ?></p>
+            <span class="post-time"><i class="icon ion-ios7-time-outline"></i> <span title="<?php echo $message->present()->time(); ?>"><?php echo formatDTime($message->created_at); ?></span></span>
+
+        </div>
+    </div>
+</a>

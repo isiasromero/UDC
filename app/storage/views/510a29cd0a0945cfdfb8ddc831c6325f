@@ -1,0 +1,10 @@
+<?php foreach($users as $user): ?>
+    <a href="" data-username="<?php echo $user->present()->atName(); ?>" data-userid="<?php echo $user->id; ?>" data-name="<?php echo $user->fullname; ?>" class="media">
+        <div class="media-object pull-left"><img width="20" height="20" src="<?php echo $user->present()->getAvatar(20); ?>"/> </div>
+        <div class="media-body">
+            <h4 class="media-heading"><?php echo $user->fullname; ?> <?php echo Theme::section('user.verified', ['user' => $user]); ?></h4>
+
+        </div>
+    </a>
+
+<?php endforeach; ?>

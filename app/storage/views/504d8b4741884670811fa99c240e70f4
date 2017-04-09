@@ -1,0 +1,33 @@
+<div class="user media user-mini notification <?php echo $notification->id; ?>-notification">
+      <div class="media-object pull-left">
+            <a href="<?php echo $notification->user->present()->url(); ?>" data-ajaxify="true"><img src="<?php echo $notification->user->present()->getAvatar(100); ?>"/></a>
+      </div>
+      <div class="media-body">
+
+           <?php if ($type == 'community'): ?>
+                <?php $community = app('App\\Repositories\\CommunityRepository')->get($typeId)?>
+                <?php if ($community): ?>
+                    <h5 class="media-heading"><i class="icon ion-speakerphone"></i>  <?php echo $notification->user->fullname; ?> <?php echo trans('notification.invited-you-to'); ?>
+                        <a href="<?php echo $community->present()->url(); ?>" data-ajaxify="true" ><?php echo $community->title; ?></a> <?php echo trans('community.community'); ?>
+                     </h5>
+                <?php endif; ?>
+
+           <?php elseif($type == 'page'): ?>
+
+              <?php $page = app('App\\Repositories\\PageRepository')->get($typeId)?>
+              <?php if ($page): ?>
+                  <h5 class="media-heading"><i class="icon ion-speakerphone"></i>  <?php echo $notification->user->fullname; ?> <?php echo trans('notification.invited-you-to-like'); ?>
+                      <a href="<?php echo $page->present()->url(); ?>" data-ajaxify="true" ><?php echo $page->title; ?></a>
+                  </h5>
+              <?php else: ?>
+
+              <?php endif; ?>
+           <?php endif; ?>
+
+          <span class="post-time"> <i class="icon ion-ios7-time-outline"></i> <span title="<?php echo $notification->present()->time(); ?>"><?php echo $notification->created_at; ?></span></span>
+           <div class="action-buttons">
+                <a data-id="<?php echo $notification->id; ?>" class="delete-button" href=""><i class="icon ion-close"></i></a>
+           </div>
+      </div>
+
+</div>

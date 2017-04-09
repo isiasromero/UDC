@@ -1,0 +1,21 @@
+<?php if($conversation->present()->theUser()): ?>
+
+<a  data-ajaxify="true" class="<?php echo (isset($userid) and $userid == $conversation->present()->theUser()->id) ? 'active' : null; ?>" href="<?php echo URL::route('messages'); ?>?user=<?php echo $conversation->present()->theUser()->username; ?>">
+    <div class="media">
+        <div class="media-object pull-left">
+            <img src="<?php echo $conversation->present()->theUser()->present()->getAvatar(100); ?>"/>
+        </div>
+        <div class="media-body">
+            <h3>
+                <?php echo $conversation->present()->theUser()->present()->fullName(); ?>
+
+                <?php $count = app('App\\Repositories\\MessageRepository')->countUnreadFrom($conversation->present()->theUser()->id)?>
+                <?php if($count): ?>
+                <strong style="font-size: 12px">(<?php echo $count; ?>)</strong>
+                <?php endif; ?>
+            </h3>
+
+        </div>
+    </div>
+</a>
+<?php endif; ?>

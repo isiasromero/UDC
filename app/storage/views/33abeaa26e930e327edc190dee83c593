@@ -1,0 +1,3 @@
+<?php foreach($messages->reverse() as $message): ?>
+    <?php echo Theme::section('messages.display', ['message' => $message]); ?>
+<?php endforeach; ?>

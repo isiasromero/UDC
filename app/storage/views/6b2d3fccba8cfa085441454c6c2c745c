@@ -1,0 +1,26 @@
+<?php if($message->present()->canView()): ?>
+
+<div class="media" id="message-<?php echo $message->id; ?>">
+    <div class="media-object pull-left">
+        <a href="<?php echo $message->senderUser->present()->url(); ?>"><img src="<?php echo $message->senderUser->present()->getAvatar(200); ?>"/></a>
+    </div>
+    <div class="media-body">
+        <a href="" class="delete-message-button" data-id="<?php echo $message->id; ?>"><i class="icon ion-close"></i></a>
+        <h4><?php echo $message->senderUser->present()->fullName(); ?></h4>
+        <p>
+            <?php echo $message->present()->text(); ?>
+        </p>
+
+        <?php if($message->image): ?>
+            <div >
+                <a class="preview-image" rel="message-<?php echo $message->id; ?>" href="<?php echo Image::url($message->image, 600); ?>">
+                    <img style="max-width: 40%;margin-bottom: 10px" src="<?php echo Image::url($message->image, 600); ?>">
+                </a>
+            </div>
+        <?php endif; ?>
+
+        <span class="post-time"><i class="icon ion-ios7-time-outline"></i> <span title="<?php echo $message->present()->time(); ?>"><?php echo formatDTime($message->created_at); ?></span></span>
+
+    </div>
+</div>
+<?php endif; ?>

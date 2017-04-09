@@ -1,0 +1,105 @@
+<div class="box">
+    <div class="box-title">Add Games</div>
+    <div class="box-content">
+
+        <?php if($message): ?>
+        <div class="alert alert-danger"><?php echo $message; ?></div>
+        <?php endif; ?>
+
+        <form enctype="multipart/form-data" class="form-horizontal" method="post" action="">
+            <div class="alert alert-info">Add Your games with there full details from here</div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Title</label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" placeholder="Category title" name="val[title]"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">About</label>
+                <div class="col-sm-7">
+                    <textarea class="form-control" name="val[description]"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Game Category</label>
+                <div class="col-sm-7">
+                    <select class="form-control" name="val[category]">
+                        <?php foreach($categories as $category): ?>
+                            <option value="<?php echo $category->id; ?>"><?php echo $category->title; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label"><?php echo trans('game.game-file'); ?></label>
+                <div class="col-sm-7">
+                    <span   class=" fileupload fileupload-exists" data-provides="fileupload">
+                    <a title="<?php echo trans('post.attach-photos'); ?>"  class="btn-file btn btn-success">
+                        <span class="fileupload-new"><?php echo trans('game.select-game'); ?></span>
+                        <input  id="" multiple  class="" type="file" name="file">
+                    </a>
+                    </span>
+
+                    <br/>
+
+                    <?php if(!Config::get('disable-game-embed-code', true) or (Config::get('allow-admin-embed-game-code', false) and Auth::user()->isAdmin())): ?>
+                        <label class=" control-label"><?php echo trans('game.or'); ?> <?php echo trans('game.embed-code'); ?></label><br/><br/>
+                        <div class="">
+                            <textarea data-height="80" placeholder="<?php echo trans('game.embed-code'); ?>" style="height: 100px" class="form-control" name="val[content]"></textarea>
+                        </div>
+                    <?php endif; ?>
+
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label"><?php echo trans('game.dimensions'); ?></label>
+                <div class="col-sm-7">
+                    <p class="help-block"><strong><?php echo trans('game.dimension-note'); ?></strong> </p>
+                    <label><?php echo trans('game.width'); ?></label>
+                    <input class="form-control" type="text" name="val[width]" value="100%" placeholder="<?php echo trans('game.width'); ?>"/>
+                    <label><?php echo trans('game.height'); ?></label>
+                    <input class="form-control" type="text" name="val[height]" value="450" placeholder="<?php echo trans('game.height'); ?>"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label"><?php echo trans('game.game-icon'); ?></label>
+                <div class="col-sm-7">
+                    <span   class=" fileupload fileupload-exists" data-provides="fileupload">
+                    <a title="<?php echo trans('post.attach-photos'); ?>"  class="btn-file btn btn-success">
+                        <span class="fileupload-new"><?php echo trans('game.select-icon'); ?></span>
+
+
+                        <input  id="" multiple  class="" type="file" name="icon">
+                    </a>
+                    </span>
+
+
+                </div>
+            </div>
+
+            <!---Admin features--->
+            <div class="form-group">
+                <label class="col-sm-3 control-label">Verified</label>
+                <div class="col-sm-7">
+                    <select class="form-control" name="val[verified]">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div class="body-header">
+                <input class="btn btn-danger no-radius" type="submit" value="Add Game"/>
+            </div>
+        </form>
+    </div>
+</div>

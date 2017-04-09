@@ -1,0 +1,15 @@
+<div class="container page-content clearfix">
+    <div class="small-left-column">
+        <?php echo Theme::section('community.page.left'); ?>
+    </div>
+    <div class="large-right-column">
+        <?php if (!$community->present()->isMember() and $community->present()->canJoin()): ?>
+            <div class="community-join-panel box">
+                <a class="btn btn-danger btn-sm join-community pull-right" data-id="<?php echo $community->id; ?>" href=""><?php echo trans('community.join'); ?></a>
+            </div>
+        <?php endif; ?>
+        <?php echo $content; ?>
+
+        <?php echo Theme::section('community.page.history'); ?>
+    </div>
+</div>

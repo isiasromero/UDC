@@ -1,0 +1,187 @@
+1491772368s:16588:"<div id="post-1" user-timeline text 0 0  class="post-media user-post-1 clearfix">
+    <div class="post-header clearfix">
+            <div class="header-object">
+                <a class="user-popover" data-url="http://localhost/redsocialUDC/user/popover/1" href="http://localhost/redsocialUDC/romero"><img src="http://localhost/redsocialUDC/uploads/users/1/_200_a304dba30e48562028674f3005f54520.jpg"/></a>
+            </div>
+            <div class="header-body">
+                <h3 class="title">
+
+                    <a  data-ajaxify="true" href="http://localhost/redsocialUDC/romero">romero</a> <span>@romero </span>
+                    <i title="romero esta en linea" class="icon ion-record" style="color: #26C281;font-size: 11px"></i>
+    
+                    
+                                    </h3>
+                <span class="post-time"><i class="icon ion-ios7-time-outline"></i>
+
+                    <span title="2017-04-09T07:04:51Z">Sunday, April 9, 2017</span> <span style="font-weight: bold"><i class="icon ion-ios7-arrow-thin-right"></i>
+                        <span class="post-is-edited-1">
+                                                    </span>
+                        Amigos</span></span>
+
+                
+                <div class="post-action-dropdown dropdown">
+                    <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href=""><i class="icon ion-ios7-arrow-down"></i></a>
+
+
+                         <ul class="dropdown-menu pull-right">
+                             
+                                                         
+                            <li><a href="http://localhost/redsocialUDC/report/post?url=http://localhost/redsocialUDC/post/1">Reportar publicacion</a> </li>
+
+
+                                                                                                <li><a href="" data-id="1" class="edit-post-trigger">Editar post</a> </li>
+                                                                <li><a data-id="1" class="delete-post" data-message="Do you really want to delete this post" href="">Eliminar</a> </li>
+                            
+                             
+                                                          <li><a href="http://localhost/redsocialUDC/post/1">Ver post</a> </li>
+                                                      </ul>
+
+                </div>
+            </div>
+
+    </div>    <!--original owner of post incase of shared-->
+    
+    <div class="post-body">
+
+
+        <div id="post-text-content-1" class="post-text-content">
+
+                        fdf            
+            
+        </div>
+
+
+                <div id="post-inline-editor-1" class="post-inline-editor clearfix">
+            <form  action="" method="post">
+                <textarea name="text" >fdf</textarea>
+                <div class="pull-right">
+                    <button data-text="fdf" data-edited="Editado" data-id="1" class="save-post-inline-editor btn btn-success btn-xs">Editado</button>
+                    <a data-id="1" class="cancel-post-inline-editor btn btn-default btn-xs">Cancelar</a>
+                </div>
+            </form>
+        </div>
+        
+        
+
+        
+        
+
+        
+                
+                
+    </div>
+
+    <div class="post-footer">
+        <ul class="nav nav-left">
+                        <li><a href="" data-is-login="1" class="post-share-button" data-id="1"><i class="icon ion-reply"></i> <span>Compartir</span></a> </li>
+                        <li>
+                
+                <a data-is-login="1" data-status="0" class="like-button" data-like="Me gusta" data-unlike="Ya no me gusta" data-id="1" data-type="post" href=""><i class="icon ion-ios7-heart"></i> <span>Me gusta</span></a>
+            </li>
+                        <li>
+                
+                <a data-userid="1" data-on="Activar Notificaciones" data-status="1" data-off="Desactivar Notificaciones" class="toggle-notification-receiver" data-type="post" data-type-id="1" href="">
+                    <i class="icon ion-ios7-bell-outline"></i>
+
+                        <span>
+                                                            Desactivar Notificaciones                                                    </span>
+                </a>
+            </li>
+                    </ul>
+
+        <ul class="nav nav-right pull-right">
+                        <li><a data-id="1" data-loading="cargando....." class="post-activity-loader" href="http://localhost/redsocialUDC/shares/1"><i class="icon ion-reply"></i> <span class="post-share-count-1"></span></a> </li>
+                        <li><a data-id="1" data-loading="cargando....." class="post-activity-loader" href="http://localhost/redsocialUDC/likes/post/1"><i class="icon ion-ios7-heart"></i> <span class="post-like-count-1">0</span></a> </li>
+            <li><a  href="javascript:void(0)"><i class="icon ion-reply-all"></i> <span class="post-reply-count-1">0</span></a> </li>
+        </ul>
+
+
+    </div>
+    <div id="post-activity-1" class="post-activity">
+        cargando.....    </div>
+    <div class="post-replies" id="1-post-replies" data-limit="3" data-offset="3" data-type="post" data-type-id="1">
+
+                <div id="post-1-reply-lists" class="replies-list">
+
+                    </div>
+                            <div class="media clearfix" style="overflow: visible">
+    
+    <div class="media-body" style="overflow: visible;content:'';
+
+ display:block;">
+        <form  id="reply-form-post-1" data-type="post" class="clearfix" data-id="1" enctype="multipart/form-data" action="" method="post">
+            <input data-type="post" data-id="1" id="1-reply-input" autocomplete="off" data-target="#1-hashtag-mention-suggestion" data-text-limit="150" data-counter-target="#1-text-counter" class="mention post-text-limit" type="text" placeholder="Agregar comentario"/>
+            <input type="hidden" name="val[type]" value="post"/>
+            <input type="hidden" name="val[type_id]" value="1"/>
+            <div class="actions">
+
+            </div>
+
+            <div class="real-comment-form">
+                <textarea data-height="30" style="height: 50px" id="1-reply-textarea" data-target="#1-hashtag-mention-suggestion" data-text-limit="150" data-counter-target="#1-text-counter" class="mention post-text-limit"  name="val[text]" placeholder="Agregar comentario" ></textarea>
+                <div class="hashtag-mention-suggestion" id="1-hashtag-mention-suggestion" style="position: relative">
+                    <div class="listing"></div>
+                </div>
+                <div class="reply-footer">
+                    <button class="btn btn-success btn-sm">Contestar</button>
+                    <a data-type="post" data-id="1" href="" class="btn btn-danger btn-sm cancel-reply-form">Cancelar</a>
+
+
+                    
+                    <a class="emoticon-selector" href="javascript:void(0)">
+                        <img style="display: inline-block;width: 15px;margin: 3px auto" src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticon.png"/>
+                    </a>
+                    <div class="" style="display: none">
+
+                                                <a title="Smile" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=":)" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/big_smile.png"/> </a>
+                                                <a title="Bad Smile" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=":<)" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/bad_smile.png"/> </a>
+                                                <a title="Amazing" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code="-:" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/amazing.png"/> </a>
+                                                <a title="Anger" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=":@" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/anger.png"/> </a>
+                                                <a title="Bad Egg" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=":b" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/bad_egg.png"/> </a>
+                                                <a title="Beaten" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=")b" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/beaten.png"/> </a>
+                                                <a title="Black Heart" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code="(b" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/black_heart.png"/> </a>
+                                                <a title="Cry" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=":c" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/cry.png"/> </a>
+                                                <a title="Happy" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=":-)" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/happy.png"/> </a>
+                                                <a title="Electric Shock" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-e" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/electric_shock.png"/> </a>
+                                                <a title="Girl" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-g" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/girl.png"/> </a>
+                                                <a title="Exciting" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-ce" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/exciting.png"/> </a>
+                                                <a title="Eyes droped" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-ye" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/eyes_droped.png"/> </a>
+                                                <a title="Greedy" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-(g" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/greedy.png"/> </a>
+                                                <a title="Haha" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-ha" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/haha.png"/> </a>
+                                                <a title="Horror" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-ho" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/horror.png"/> </a>
+                                                <a title="Money" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-)m" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/money.png"/> </a>
+                                                <a title="Nothing" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-)-n" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/nothing.png"/> </a>
+                                                <a title="Nothing to say" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-)-sn" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/nothing_to_say.png"/> </a>
+                                                <a title="Red heart" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-rh" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/red_heart.png"/> </a>
+                                                <a title="Scorn" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-sc" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/scorn.png"/> </a>
+                                                <a title="Shame" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-sh" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/shame.png"/> </a>
+                                                <a title="Shocked" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-s-h" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/shocked.png"/> </a>
+                                                <a title="Super Man" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-sp" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/super_man.png"/> </a>
+                                                <a title="Iron Man" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=";-im" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/the_iron_man.png"/> </a>
+                                                <a title="Tongue" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=":P" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/grimace.png"/> </a>
+                                                <a title="Unhappy" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=":(" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/unhappy.png"/> </a>
+                                                <a title="Victory" data-target="#1-reply-textarea" style="display: inline-block;margin: 5px" href="" data-code=":-v" class="each-emoticon-selector"><img src="http://localhost/redsocialUDC/themes/frontend/default/assets/images/emoticons/victory.png"/> </a>
+                                            </div>
+
+                                            <span  class=" fileupload fileupload-exists" data-provides="fileupload">
+
+                                  <a  class="btn-file btn">
+                                      <span class="fileupload-new"><i class="icon ion-android-camera"></i></span>
+                                      <span class="fileupload-exists"><i class="icon ion-android-camera"></i></span>
+                                      <input title="" class="" type="file" name="image">
+                                  </a>
+                        </span>
+
+                                        <span style="margin:0" id="1-text-counter" class="post-text-counter">150</span>
+                                    </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+                
+    </div>
+</div>
+";

@@ -1,0 +1,19 @@
+<div class="container page-content clearfix">
+    <div class="left-column">
+        <?php if(count($conversations) or $userid): ?>
+            <?php echo Theme::section('messages.message', ['messages' => $messages, 'userid' => $userid]); ?>
+        <?php else: ?>
+            <div class="box">
+                <div class="box-title">Messages</div>
+                <div class="box-content">
+                    <div class="alert alert-info">
+                        You don't have any new message
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+    </div>
+    <div class="right-column">
+        <?php echo Theme::section('messages.right', ['conversations' => $conversations, 'userid' => $userid]); ?>
+    </div>
+</div>

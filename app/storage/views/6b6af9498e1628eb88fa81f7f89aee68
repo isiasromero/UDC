@@ -1,0 +1,18 @@
+<div class="general-listing media">
+
+    <div class="media-object pull-left">
+            <a data-ajaxify="true" class=" " href="<?php echo $community->present()->url(); ?>"><img src="<?php echo $community->present()->getLogo(); ?>"/> </a>
+    </div>
+
+
+    <div class="media-body">
+        <h3 class="media-heading">
+            <a data-ajaxify="true" class="cover" href="<?php echo $community->present()->url(); ?>"><?php echo Str::limit($community->title, 30); ?> </a>
+
+        </h3>
+        <?php echo Theme::extend('community-display', ['community' => $community]); ?>
+        <a data-ajaxify="true" href="<?php echo $community->present()->url('members'); ?>"><?php echo count($community->members) + 1; ?> <?php echo trans('community.members'); ?></a> |
+        <a  data-ajaxify="true" href="<?php echo $community->present()->url(); ?>"><?php echo count($community->posts); ?> <?php echo trans('post.posts'); ?></a>
+
+    </div>
+</div>

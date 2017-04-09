@@ -1,0 +1,14 @@
+<?php if(count($pages) < 1): ?>
+    <div class="box">
+        <div class="box-title"><?php echo trans('page.pages'); ?></div>
+        <div class="box-content">
+            <div class="alert alert-info"><?php echo trans('page.no-page'); ?></div>
+        </div>
+    </div>
+<?php endif; ?>
+
+<?php foreach($pages as $page): ?>
+    <?php echo Theme::section('page.display', ['page' => $page]); ?>
+<?php endforeach; ?>
+
+<?php echo $pages->links(); ?>

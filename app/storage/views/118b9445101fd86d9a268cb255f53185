@@ -1,0 +1,46 @@
+
+<div class="box">
+    <div class="box-title"><?php echo trans('message.messages'); ?></div>
+    <div class="messages-container">
+        <div data-lastcheck="" class="message-list-container" data-userid="<?php echo $userid; ?>">
+            <a href="" class="load-old-message" data-userid="<?php echo $userid; ?>">Load old messages</a>
+            <?php foreach($messages->reverse() as $message): ?>
+                <?php echo Theme::section('messages.display', ['message' => $message]); ?>
+
+
+
+            <?php endforeach; ?>
+        </div>
+
+        <div class="message-form-container">
+            <form enctype="multipart/form-data" data-userid="<?php echo $userid; ?>" action="" method="post">
+                <input type="text" placeholder="<?php echo trans('message.write-message'); ?>" name="text" class="form-control" id="message-textarea" />
+
+                <button class="btn btn-sm btn-success" ><?php echo trans('message.send'); ?></button>
+                <?php if(Config::get('enable-emoticon')): ?>
+
+                    <a class="emoticon-selector" href="javascript:void(0)">
+                        <img style="display: inline-block;width: 25px;margin: 3px" src="<?php echo Theme::asset()->img('theme/images/emoticon.png'); ?>"/>
+                    </a>
+                    <div class="" style="display: none">
+
+                        <?php foreach(Theme::option()->get('emoticons') as $code => $details): ?>
+                        <a title="<?php echo $details['title']; ?>" data-target="#message-textarea" style="display: inline-block;margin: 5px" href="" data-code="<?php echo $code; ?>" class="each-emoticon-selector"><img src="<?php echo $details['image']; ?>"/> </a>
+                        <?php endforeach; ?>
+                    </div>
+
+                <?php endif; ?>
+
+                <span style="position:relative;top: 15px; overflow: hidden;display: inline-block"   class=" fileupload fileupload-exists" data-provides="fileupload">
+
+                    <a title="<?php echo trans('post.attach-photos'); ?>"  class="btn-file">
+                        <span class="fileupload-new"><i class="icon ion-android-camera"></i></span>
+                        <span class="fileupload-exists"><i class="icon ion-android-camera"></i></span>
+
+                        <input  id="post-image-input"  class="" type="file" name="image">
+                    </a>
+                </span>
+            </form>
+        </div>
+    </div>
+</div>

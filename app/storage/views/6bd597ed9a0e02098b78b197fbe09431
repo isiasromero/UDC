@@ -1,0 +1,38 @@
+<div class="box">
+    <div class="box-title">Reports</div>
+    <div class="box-content">
+        <ul class="nav nav-tabs">
+          <li class="<?php echo ($type == 'post') ? 'active' : null; ?>"><a href="<?php echo URL::route('admincp-reports'); ?>?type=post">Posts</a></li>
+          <li class="<?php echo ($type == 'community') ? 'active' : null; ?>"><a href="<?php echo URL::route('admincp-reports'); ?>?type=community">Communities</a></li>
+          <li  class="<?php echo ($type == 'profile') ? 'active' : null; ?>"><a href="<?php echo URL::route('admincp-reports'); ?>?type=profile">Profiles</a></li>
+          <li  class="<?php echo ($type == 'page') ? 'active' : null; ?>"><a href="<?php echo URL::route('admincp-reports'); ?>?type=page">Pages</a></li>
+        </ul>
+
+        <table class="table table-bordered">
+              <thead>
+                <tr>
+                    <th style="width: 30%">Reporter</th>
+                    <th style="width: 40%">Reason</th>
+                    <th>Type</th>
+                    <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach($reports as $report): ?>
+                    <?php if($report->user): ?>
+                        <tr>
+                            <td><a href="<?php echo $report->user->present()->url(); ?>"><img src="<?php echo $report->user->present()->getAvatar(30); ?>"/></a> <br/> <?php echo $report->user->present()->fullName(); ?></td>
+                            <td><?php echo $report->reason; ?></td>
+                            <td><?php echo $report->type; ?></td>
+                            <td>
+                                <a href="<?php echo $report->url; ?>">Go Moderate</a> | <a href="<?php echo URL::route('delete-report', ['id' => $report->id]); ?>">Delete</a>
+                            </td>
+                        </tr>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+              </tbody>
+        </table>
+
+
+    </div>
+</div>

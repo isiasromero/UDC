@@ -1,0 +1,25 @@
+<div class="general-listing media">
+
+    <div class="media-object pull-left">
+        <a data-ajaxify="true" class="cover" href="<?php echo $game->present()->url(); ?>"><img src="<?php echo $game->present()->getAvatar(600); ?>"/> </a>
+    </div>
+
+    <div class="media-body">
+
+        <h3 class="media-heading">
+            <a data-ajaxify="true" class="cover" href="<?php echo $game->present()->url(); ?>"><?php echo $game->title; ?></a>
+             <?php echo Theme::section('game.verified', ['game' => $game]); ?>
+        </h3>
+        <span><i class="icon ion-game-controller-b"></i> <?php echo trans('game.game'); ?></span>
+
+        <p>
+            <i class="icon ion-thumbsup"></i> <span class="post-like-count-<?php echo $game->id; ?>"><?php echo $game->countLikes(); ?></span> <?php echo trans('like.likes'); ?>
+        </p>
+
+        <?php $hasLike = $game->hasLiked()?>
+
+        <a  data-is-login="<?php echo Auth::check(); ?>" data-status="<?php echo ($hasLike) ? '1' : 0; ?>" class="btn btn-default btn-xs like-button" data-like="<?php echo trans('like.like'); ?>" data-unlike="<?php echo trans('like.unlike'); ?>" data-id="<?php echo $game->id; ?>" data-type="game" href=""><i class="icon ion-ios7-heart"></i> <span><?php echo ($hasLike) ? trans('like.unlike') : trans('like.like'); ?></span></a>
+
+
+    </div>
+</div>

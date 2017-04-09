@@ -1,0 +1,49 @@
+<div class="box">
+    <div class="box-title">Manage Games <a href="<?php echo URL::route('admincp-games-add'); ?>">Add Game</a> </div>
+
+    <div class="box-content">
+        <div class="alert alert-info">Below contains the list of game both admin and members have added</div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th style="width: 30%">Title</th>
+                <th style="width: 30%">Description</th>
+                <th style="width: 10%">Category</th>
+                <th style="width: 5%">Approved</th>
+                <th style="width: 5%">verified</th>
+                <th style="width: 10%">By</th>
+                <th style="width: 10%">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach($games as $game): ?>
+            <tr>
+                <td><?php echo $game->title; ?></td>
+                <td><?php echo $game->description; ?></td>
+                <td>
+                    <?php if ($game->cat): ?>
+                        <?php echo $game->cat->title; ?>
+                    <?php endif; ?>
+                </td>
+                <td><?php echo ($game->approved == 1 ) ? 'Yes' : 'No'; ?></td>
+                <td><?php echo ($game->verified == 1 ) ? 'Yes' : 'No'; ?></td>
+                <td>
+                    <a href="<?php echo $game->user->present()->url(); ?> "><?php echo $game->user->fullname; ?></a>
+                </td>
+                <td>
+                    <?php if($game->approved == 0): ?>
+                    <a href="<?php echo URL::route('admincp-games-approve', ['id' => $game->id]); ?>">Confirm</a> <br/>
+                    <?php endif; ?>
+                    <a href="<?php echo $game->present()->url(); ?>">Visit</a><br/>
+                    <a href="<?php echo URL::route('admincp-games-edit', ['id' => $game->id]); ?>">Edit</a> <br/>
+                    <a href="<?php echo URL::route('games-delete', ['id' => $game->id]); ?>">Delete</a>
+
+                </td>
+            </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+
+        <?php echo $games->links(); ?>
+    </div>
+</div>

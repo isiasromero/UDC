@@ -1,0 +1,108 @@
+<div class="box">
+    <div class="box-title" style="margin-bottom: 0">
+        <?php echo $community->title; ?>
+        <?php if($community->present()->isMember()): ?>
+                    <?php $nStatus = $community->present()->canReceiveNotification()?>
+
+                    <a data-userid="<?php echo Auth::user()->id; ?>" data-on="On Notifications" data-status="<?php echo $nStatus; ?>" data-off="Off Notifications" class="toggle-notification-receiver" data-type="community" data-type-id="<?php echo $community->id; ?>" href="">
+                        <i class="icon ion-ios7-bell-outline"></i>
+
+                        <span>
+                            <?php if ($nStatus): ?>
+                                <?php echo trans('notification.off-notifications'); ?>
+                            <?php else: ?>
+                                <?php echo trans('notification.on-notifications'); ?>
+                            <?php endif; ?>
+                        </span>
+                    </a>
+
+        <?php endif; ?>
+        <span class="pull-right dropdown">
+            <a class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href=""><i class="icon ion-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+                <?php if(!$community->isOwner() and $community->present()->isMember()): ?>
+                    <li><a href="<?php echo URL::route('leave-community', ['id' => $community->id]); ?>"><?php echo trans('community.leave'); ?></a> </li>
+                <?php endif; ?>
+
+                <?php if($community->isOwner()): ?>
+                    <li> <a data-ajaxify="true" href="<?php echo $community->present()->url('edit'); ?>" ><?php echo trans('community.edit'); ?></a></li>
+                <?php else: ?>
+                    <li><a href="<?php echo URL::route('report', ['type' => 'community']); ?>?url=<?php echo $community->present()->url(); ?>"><i class="icon ion-flag"></i> <?php echo trans('community.report'); ?></a> </li>
+                <?php endif; ?>
+
+
+            </ul>
+        </span>
+    </div>
+    <div  class="community-cover" style="background: url(<?php echo $community->present()->getLogo(); ?>)">
+        <div data-id="<?php echo $community->id; ?>" style="background: url(<?php echo $community->present()->getLogo(); ?>)" id="croppic-community-cover"></div>
+        <input type="hidden" id="community-cropped-cover-image"/>
+        <?php if($community->present()->isAdmin()): ?>
+            <a id="change-community-cover" href="javascript:void(0)" class="btn btn-success btn-xs" style="margin: 10px 10px"><?php echo trans('community.change-cover'); ?></a>
+
+            <a href="<?php echo $community->present()->url('edit'); ?>" class="btn btn-danger btn-xs pull-right" style="margin: 10px 10px"><?php echo trans('global.edit'); ?></a>
+        <?php endif; ?>
+
+
+
+        <div class="cover-footer">
+            <i class="icon ion-locked"></i> <?php echo $community->present()->getPrivacy(); ?>
+             <span class="pull-right"><?php echo $community->countMembers(); ?> <?php echo trans('community.members'); ?></span>
+        </div>
+    </div>
+
+    <div class="nav-box">
+        <ul class="nav">
+            <li><a data-ajaxify="true" href="<?php echo $community->present()->url(); ?>"><?php echo trans('community.all-post'); ?></a> </li>
+
+            <?php foreach($community->categories as $category): ?>
+                <li class="category-<?php echo $category->id; ?>">
+
+                    <a data-ajaxify="true" href="<?php echo $community->present()->url('category/'.$category->slug); ?>"><i class="icon ion-ios7-arrow-thin-right"></i> <?php echo $category->title; ?></a>
+                    <?php if($community->isOwner()): ?>
+                        <a href="javascript:void(0)" class="community-category-remove" data-id="<?php echo $category->id; ?>" style="display: inline;position:absolute;top: 0;right: 0"><i class="icon ion-android-close"></i></a>
+                    <?php endif; ?>
+                 </li>
+            <?php endforeach; ?>
+
+            <?php if($community->isOwner()): ?>
+                <li>
+                    <a  href="" class="community-create-category-button"><i class="icon ion-plus"></i> <?php echo trans('community.add-category'); ?></a>
+                    <form data-id="<?php echo $community->id; ?>" class="community-create-category-form" action="" method="post">
+                        <input class="form-control input-sm" type="text" placeholder="Category name"/>
+                        <button class="btn btn-success btn-xs"><i class="icon ion-plus"></i> <?php echo trans('global.add'); ?></button>
+                    </form>
+
+                 </li>
+            <?php endif; ?>
+
+            <li><a data-ajaxify="true" href="<?php echo $community->present()->url('about'); ?>"><?php echo trans('community.about'); ?></a> </li>
+            <?php if($community->present()->canInvite()): ?>
+                <li><a data-ajaxify="true" href="<?php echo $community->present()->url('invite'); ?>"><?php echo trans('community.invite-members'); ?></a> </li>
+            <?php endif; ?>
+        </ul>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-title"><?php echo trans('community.created-by'); ?></div>
+    <div class="box-content">
+        <?php echo Theme::section('user.display', ['user' => $community->user, 'mini' => true, 'miniActions' => true]); ?>
+    </div>
+</div>
+
+<div class="box">
+    <div class="box-title"><?php echo trans('community.members'); ?> (<?php echo $community->countMembers(); ?>) <a class="pull-right" href="<?php echo $community->present()->url('members'); ?>"><i class="icon ion-more"></i> <?php echo trans('global.more'); ?></a> </div>
+    <div class="box-content">
+            <div class="user-tile-list">
+                <a data-ajaxify="true" href="<?php echo $community->user->present()->url(); ?>"><img src="<?php echo $community->user->present()->getAvatar(100); ?>"/> </a>
+                <?php $count = 0;?>
+                <?php foreach($community->members->take(6) as $member): ?>
+
+                        <a data-ajaxify="true" href="<?php echo $member->user->present()->url(); ?>"><img src="<?php echo $member->user->present()->getAvatar(100); ?>"/> </a>
+
+                <?php endforeach; ?>
+
+            </div>
+    </div>
+</div>

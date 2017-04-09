@@ -1,0 +1,31 @@
+<div class="container page-content">
+
+
+
+    <div class="left-column">
+        <div class="content-topography community-topography">
+            <h2 class="title"><?php echo trans('community.communities'); ?></h2>
+            <p class="description"><?php echo trans('community.community-info'); ?></p>
+
+            <ul class="nav menu">
+                <li ><a data-ajaxify="true" href="<?php echo URL::route('community-create'); ?>"><?php echo trans('community.create'); ?></a> </li>
+                <li ><a data-ajaxify="true" href="<?php echo URL::route('discover-communities'); ?>"><?php echo trans('community.discover'); ?></a> </li>
+
+            </ul>
+
+        </div>
+
+        <?php echo $content; ?>
+    </div>
+    <div class="right-column">
+
+        <ul class="nav user-action-buttons">
+            <li><a href="<?php echo URL::route('community-create'); ?>" data-ajaxify="true"><i class="icon ion-ios7-personadd-outline"></i> <span><?php echo trans('community.create'); ?></span></a> </li>
+            <li><a href="<?php echo URL::route('communities'); ?>" data-ajaxify="true"><i class="icon ion-disc"></i> <span><?php echo trans('community.my-communities'); ?></span></a> </li>
+            <li><a href="<?php echo URL::route('communities-joined'); ?>" data-ajaxify="true"><i class="icon ion-ios7-people-outline"></i> <span><?php echo trans('community.joined'); ?></span></a> </li>
+            <!--<li><a href="<?php echo URL::route('discover-communities'); ?>" data-ajaxify="true"><i class="icon ion-disc"></i> <span>Discover Communities</span></a> </li>-->
+        </ul>
+
+        <?php echo Theme::widget()->get('user-community'); ?>
+    </div>
+</div>

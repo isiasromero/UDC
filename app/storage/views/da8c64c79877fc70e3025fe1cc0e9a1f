@@ -1,0 +1,10 @@
+<?php foreach($hashtags as $hashtag): ?>
+    <a href="" data-tag="<?php echo $hashtag->hash; ?>"  class="media">
+
+        <div class="media-body">
+            <h4 class="media-heading"><strong><?php echo $hashtag->hash; ?></strong> </h4>
+
+        </div>
+    </a>
+
+<?php endforeach; ?>

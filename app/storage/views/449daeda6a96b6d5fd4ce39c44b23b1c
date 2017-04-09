@@ -1,0 +1,16 @@
+<?php if(empty($medias)): ?>
+    <strong><?php echo trans('post.no-result-found'); ?></strong>
+<?php endif; ?>
+
+<?php foreach($medias as $media): ?>
+    <a href="<?php echo $media['link']; ?>" data-image="<?php echo $media['image']; ?>" data-title="<?php echo $media['title']; ?>">
+        <div class="media">
+            <div class="media-object pull-left">
+                <img src="<?php echo $media['image']; ?>" width="30" height="30"/>
+            </div>
+            <div class="media-body">
+                <h3 class="media-heading"><?php echo $media['title']; ?></h3>
+            </div>
+        </div>
+    </a>
+<?php endforeach; ?>
